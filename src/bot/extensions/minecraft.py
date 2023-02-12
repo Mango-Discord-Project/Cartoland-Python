@@ -111,6 +111,16 @@ class MinecraftCog(pycord.Cog):
         await self._cmd(ctx, command_name)
     
     @commands.slash_command(**cmd_config)
+    async def command(self, ctx: ApplicationContext, 
+                  command_name: Option(str, default=False)):
+        await self._cmd(ctx, command_name)
+    
+    @commands.slash_command(**cmd_config)
+    async def mcc(self, ctx: ApplicationContext, 
+                  command_name: Option(str, default=False)):
+        await self._cmd(ctx, command_name)
+    
+    @commands.slash_command(**cmd_config)
     async def faq(self, ctx: ApplicationContext, 
                   question: Option(str, choices=options['faq'], default=False)):
         await self._faq(ctx, question)
@@ -121,9 +131,19 @@ class MinecraftCog(pycord.Cog):
         await self._dtp(ctx, data_pack_feature)
     
     @commands.slash_command(**cmd_config)
+    async def datapack(self, ctx: ApplicationContext, 
+                  command_name: Option(str, default=False)):
+        await self._cmd(ctx, command_name)
+    
+    @commands.slash_command(**cmd_config)
     async def lang(self, ctx: ApplicationContext, 
                    lang_code: Option(str, choices=[*options['lang']], default=False)):
         await self._lang(ctx, lang_code)
+    
+    @commands.slash_command(**cmd_config)
+    async def language(self, ctx: ApplicationContext, 
+                  command_name: Option(str, default=False)):
+        await self._cmd(ctx, command_name)
     
     @commands.slash_command(**cmd_config)
     async def help(self, ctx: ApplicationContext, 
