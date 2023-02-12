@@ -1,7 +1,9 @@
-# Project exclude paths
-/target/
-# Project exclude paths
-/out/
-/protocol.txt
-/system_analysis.png
-/megumin/
+# environment
+*.env
+
+# PDM
+__pypackages__/
+
+# Python
+__pycache__/
+*.pyc
